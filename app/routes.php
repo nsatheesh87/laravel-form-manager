@@ -18,5 +18,19 @@ Route::get('/', function()
 
 
 
+
+
 Route::get('form/create', 'FormController@create');
+Route::post('form/store', 'FormController@store');
+Route::get('form/list', 'FormController@listdata');
+
+Route::get('form/generatefields/{id}', 'FormController@generateFields')->where('id', '[0-9]+');
+Route::post('form/storefields', 'FormController@storefields');
+
+Route::get('form/render/{id}', 'FormController@render')->where('id','[0-9]+');
+Route::post('form/storedata', 'FormController@storedata');
+
+Route::get('form/viewdata/{id}', array('as' => 'form_viewdata', 'uses' => 'FormController@viewdata'))->where('id','[0-9]+');
+
+
 

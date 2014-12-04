@@ -8,13 +8,16 @@
 	      <label for="formName" class="col-lg-2 control-label">Form Name</label>
 	      <div class="col-lg-10">
 	        <input class="form-control" id="name" name="name" placeholder="Enter your form name" type="text">
+	        {{ $errors->first('name','<span class="text-warning">:message</span>') }}
 	      </div>
+	      
 	    </div>
 	    
 	    <div class="form-group">
 	      <label for="s_message" class="col-lg-2 control-label">Success Message</label>
 	      <div class="col-lg-10">
 	        <textarea class="form-control" rows="3" name="s_message" id="s_message"></textarea>
+	         {{ $errors->first('s_message','<span class="text-warning">This field is required</span>') }}
 	        <span class="help-block">This message will be shown to the user after the form submission.</span>
 	      </div>
 	    </div>
